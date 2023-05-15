@@ -53,7 +53,7 @@ const RevenueGroupTable = ({
   };
   return (
     <div className='border border-gray-200 rounded-md'>
-      <div className='flex items-center flex-wrap gap-5 p-2'>
+      <div className='flex items-center gap-5 p-2'>
         <div>
           <div className='text-lg inline'>{name}</div>
           {isSpecialGroup ? (
