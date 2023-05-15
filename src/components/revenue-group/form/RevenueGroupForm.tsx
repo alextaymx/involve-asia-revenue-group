@@ -64,6 +64,7 @@ function RevenueGroupForm({ onSubmit: onSubmitProp }: Props) {
         <textarea
           className='h-24 textarea textarea-bordered input-sm'
           placeholder='Add description'
+          maxLength={200}
           {...register('description', {
             maxLength: 200,
           })}
