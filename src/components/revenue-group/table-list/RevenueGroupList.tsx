@@ -22,6 +22,14 @@ function RevenueGroupList(props: Props) {
           </div>
         );
       })}
+
+      {revenueGroupList.length === 0 ? (
+        <div className='my-5 text-center animate-pulse'>
+          <h1 className='w-full py-5 text-xl font-bold border-y '>
+            Create your first revenue group now
+          </h1>
+        </div>
+      ) : null}
       {/* <pre>{JSON.stringify(revenueGroupList, null, 2)}</pre> */}
     </div>
   );
