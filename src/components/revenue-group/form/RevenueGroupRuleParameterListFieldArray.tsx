@@ -1,11 +1,13 @@
-import { RevenueGroup } from '@/types/revenueGroup';
-import { defaultRevenueGroupRuleParameterData } from '@/utils/revenue-group/formHelpers';
 import { useCallback } from 'react';
 import {
   FieldArrayWithId,
-  UseFormReturn,
   useFieldArray,
+  UseFormReturn,
 } from 'react-hook-form';
+
+import { defaultRevenueGroupRuleParameterData } from '@/utils/revenue-group/formHelpers';
+
+import { RevenueGroup } from '@/types/revenueGroup';
 
 type Props = {
   name: `rules.${number}.parameterList`;
@@ -91,6 +93,7 @@ const RevenueGroupRuleParameterListField = ({
       {/* action */}
       {index === 0 ? (
         <button
+          type='button'
           className='font-bold btn btn-square btn-xs btn-ghost '
           onClick={handleAppendRuleParam}
         >
@@ -98,6 +101,7 @@ const RevenueGroupRuleParameterListField = ({
         </button>
       ) : (
         <button
+          type='button'
           className='btn btn-square btn-xs btn-ghost'
           onClick={() => handleRemove(index)}
         >
