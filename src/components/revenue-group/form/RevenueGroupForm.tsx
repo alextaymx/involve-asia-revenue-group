@@ -1,11 +1,14 @@
 'use client';
 
-import RevenueGroupRulesFieldArray from '@/components/revenue-group/form/RevenueGroupRulesFieldArray';
-import { RevenueGroupFormData } from '@/types/revenueGroup';
-import { defaultRevenueGroupFormData } from '@/utils/revenue-group/formHelpers';
-import { triggerToast } from '@/utils/toast/triggerToast';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+
+import RevenueGroupRulesFieldArray from '@/components/revenue-group/form/RevenueGroupRulesFieldArray';
+
+import { defaultRevenueGroupFormData } from '@/utils/revenue-group/formHelpers';
+import { triggerToast } from '@/utils/toast/triggerToast';
+
+import { RevenueGroupFormData } from '@/types/revenueGroup';
 
 type Props = {
   onSubmit: (data: RevenueGroupFormData) => void;
@@ -15,7 +18,7 @@ function RevenueGroupForm({ onSubmit: onSubmitProp }: Props) {
   const methods = useForm<RevenueGroupFormData>({
     defaultValues: defaultRevenueGroupFormData,
   });
-  const { register, handleSubmit, reset } = methods;
+  const { register, handleSubmit, reset, watch } = methods;
 
   const handleReset = useCallback(() => {
     reset();
@@ -32,6 +35,8 @@ function RevenueGroupForm({ onSubmit: onSubmitProp }: Props) {
     },
     [onSubmitProp, handleReset]
   );
+
+  const descriptionInput = watch('description');
 
   return (
     <form
@@ -59,11 +64,15 @@ function RevenueGroupForm({ onSubmit: onSubmitProp }: Props) {
         <textarea
           className='h-24 textarea textarea-bordered input-sm'
           placeholder='Add description'
-          {...register('description')}
+          {...register('description', {
+            maxLength: 200,
+          })}
         ></textarea>
         <label className='label'>
           <span className='label-text-alt'></span>
-          <span className='label-text-alt'>0 / 200</span>
+          <span className='label-text-alt'>
+            {descriptionInput.length} / 200
+          </span>
         </label>
       </div>
       <div className='form-control'>
