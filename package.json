@@ -21,27 +21,33 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.1.4",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "daisyui": "^2.51.6",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "next": "13.4.2",
+    "next-seo": "^6.0.0",
+    "next-sitemap": "^4.0.7",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-hot-toast": "^2.4.1",
+    "react-redux": "^8.0.5",
+    "redux-persist": "^6.0.0",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4",
-    "next-seo": "^6.0.0",
-    "next-sitemap": "^4.0.7"
+    "typescript": "5.0.4"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.3.0",
     "@tailwindcss/forms": "^0.5.3",
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.35",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "17.0.44",
+    "@types/react-dom": "17.0.17",
     "autoprefixer": "^10.4.14",
     "commitizen": "^4.3.0",
     "cross-env": "^7.0.3",
@@ -73,6 +79,9 @@
     "rimraf": "^5.0.0",
     "tailwindcss": "^3.3.1",
     "typescript": "^5.0.4"
+  },
+  "overrides": {
+    "@types/react": "17.0.44"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
