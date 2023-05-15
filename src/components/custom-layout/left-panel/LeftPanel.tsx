@@ -1,11 +1,15 @@
 'use client';
 
-import RevenueGroupForm from '@/components/revenue-group/form/RevenueGroupForm';
+import React, { useCallback } from 'react';
+
 import { appendRevenueGroup } from '@/lib/redux/features/revenueGroupSlice';
 import { useAppDispatch } from '@/lib/redux/hooks';
-import { RevenueGroup } from '@/types/revenueGroup';
+
+import RevenueGroupForm from '@/components/revenue-group/form/RevenueGroupForm';
+
 import { triggerToast } from '@/utils/toast/triggerToast';
-import React, { useCallback } from 'react';
+
+import { RevenueGroup } from '@/types/revenueGroup';
 
 type Props = {};
 

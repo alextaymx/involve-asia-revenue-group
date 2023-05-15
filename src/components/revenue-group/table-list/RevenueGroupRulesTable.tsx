@@ -1,14 +1,13 @@
-import {
-  removeRuleForRevenueGroup,
-  revenueGroup,
-} from '@/lib/redux/features/revenueGroupSlice';
+import React from 'react';
+
+import { removeRuleForRevenueGroup } from '@/lib/redux/features/revenueGroupSlice';
 import { useAppDispatch } from '@/lib/redux/hooks';
+
 import {
   RevenueGroup,
   RevenueRule,
   RevenueRuleParameter,
 } from '@/types/revenueGroup';
-import React from 'react';
 
 type Props = { rules: RevenueRule[]; revenueGroup: RevenueGroup };
 
@@ -23,8 +22,8 @@ function RevenueGroupRulesTable({ rules, revenueGroup }: Props) {
   const maxParameterList = ruleWithMaximumParameterCount?.parameterList ?? [];
 
   return (
-    <div className='overflow-x-auto max-w-[50vw]'>
-      <table className='table w-full table-compact'>
+    <div className='overflow-auto  p-2 max-w-[calc(100vw-50px)] lg:max-w-[50vw]'>
+      <table className='table table-compact w-full'>
         <thead>
           <tr>
             <th>Rule</th>

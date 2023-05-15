@@ -1,11 +1,13 @@
 'use client';
 
-import RevenueGroupRulesTable from '@/components/revenue-group/table-list/RevenueGroupRulesTable';
 import {
   removeRevenueGroup,
   selectRevenueGroupList,
 } from '@/lib/redux/features/revenueGroupSlice';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
+
+import RevenueGroupRulesTable from '@/components/revenue-group/table-list/RevenueGroupRulesTable';
+
 import { RevenueGroup } from '@/types/revenueGroup';
 
 type Props = {};
@@ -51,11 +53,13 @@ const RevenueGroupTable = ({
   };
   return (
     <div className='border border-gray-200 rounded-md'>
-      <div className='flex items-center gap-5 p-2'>
-        <div className='text-lg'>{name}</div>
-        {isSpecialGroup ? (
-          <div className='badge badge-primary'>Special Group</div>
-        ) : null}
+      <div className='flex items-center flex-wrap gap-5 p-2'>
+        <div>
+          <div className='text-lg inline'>{name}</div>
+          {isSpecialGroup ? (
+            <div className='badge badge-primary inline mx-2'>Special Group</div>
+          ) : null}
+        </div>
         <div className='flex-grow'></div>
         <button className='btn btn-ghost btn-sm' onClick={handleDeleteGroup}>
           ✕
@@ -63,7 +67,7 @@ const RevenueGroupTable = ({
       </div>
 
       <div className='p-2'>
-        <div title={`description`} className='text-sm text-gray-500'>
+        <div title='description' className='text-sm text-gray-500'>
           {description}
         </div>
       </div>
